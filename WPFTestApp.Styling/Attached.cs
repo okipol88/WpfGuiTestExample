@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WPFTestApp
+namespace WPFTestApp.Styling
 {
     public class Verifier
     {

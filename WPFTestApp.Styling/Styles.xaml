@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="WPFTestApp.Styling.Styles"
+                    xmlns:local="clr-namespace:WPFTestApp.Styling">
+
+        <Style x:Key="verifierBasedEnabledStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding (local:Attached.Verifier), RelativeSource={RelativeSource Mode=Self}}"  Value="{x:Null}">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+</ResourceDictionary>

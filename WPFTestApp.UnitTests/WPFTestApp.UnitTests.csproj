@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WPFTestApp.Styling\WPFTestApp.Styling.csproj">
+      <Project>{BB242AF5-072E-4948-8E46-64C1D929B2BB}</Project>
+      <Name>WPFTestApp.Styling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WPFTestApp\WPFTestApp.csproj">
       <Project>{471ebd77-33f8-48ad-9543-efe0e52be917}</Project>
       <Name>WPFTestApp</Name>

@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
+using WPFTestApp.Styling;
 
 namespace WPFTestApp.UnitTests
 {
@@ -203,9 +204,19 @@ namespace WPFTestApp.UnitTests
 
             isEnabled = await gui.Execute(x => x.FindChild<Button>("testButton").IsEnabled);
 
-            await Task.Delay(TimeSpan.FromSeconds(1000));
 
             Assert.IsFalse(isEnabled);
+
+            await gui.Execute(x =>
+            {
+                var button = x.FindChild<Button>("testButton");
+                Attached.SetVerifier(button, new Verifier());
+            });
+
+            isEnabled = await gui.Execute(x => x.FindChild<Button>("testButton").IsEnabled);
+
+            Assert.IsTrue(isEnabled);
+
         }
     }
 }
