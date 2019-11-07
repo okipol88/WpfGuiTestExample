@@ -1,0 +1,2 @@
+# WpfGuiTestExample
+GUI unit tests
